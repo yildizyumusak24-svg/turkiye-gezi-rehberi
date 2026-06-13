@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mekans",
+  "info": {
+    "singularName": "mekan",
+    "pluralName": "mekans",
+    "displayName": "Mekan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ad": {
+      "type": "string"
+    },
+    "aciklama": {
+      "type": "blocks"
+    },
+    "puan": {
+      "type": "decimal"
+    },
+    "gorsel": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "yz_aciklama": {
+      "type": "richtext"
+    },
+    "sehir": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sehir.sehir",
+      "inversedBy": "mekans"
+    }
+  }
+}

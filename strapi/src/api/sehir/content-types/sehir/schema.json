@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sehirs",
+  "info": {
+    "singularName": "sehir",
+    "pluralName": "sehirs",
+    "displayName": "Sehir"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ad": {
+      "type": "string"
+    },
+    "ulke": {
+      "type": "string"
+    },
+    "kisa_bilgi": {
+      "type": "blocks"
+    },
+    "kapak_resmi": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mekans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mekan.mekan",
+      "mappedBy": "sehir"
+    }
+  }
+}
