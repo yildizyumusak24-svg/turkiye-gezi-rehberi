@@ -1,9 +1,9 @@
-import streamlit as st
+﻿import streamlit as st
 import requests
 
-STRAPI_URL = "http://localhost:1337"
+STRAPI_URL = "https://turkiye-gezi-rehberi.onrender.com"
 
-st.set_page_config(page_title="Turkiye Gezi Rehberi", page_icon="🗺️", layout="wide")
+st.set_page_config(page_title="Turkiye Gezi Rehberi", page_icon="ğŸ—ºï¸", layout="wide")
 
 st.markdown("""
 <style>
@@ -55,15 +55,15 @@ def alan_al(obj, alan):
     return obj.get(alan)
 
 # Ana arayuz
-st.markdown("# 🗺️ Turkiye Gezi Rehberi")
+st.markdown("# ğŸ—ºï¸ Turkiye Gezi Rehberi")
 st.markdown("*YZ destekli dinamik seyahat icerikleri*")
 st.divider()
 
 try:
     sehirler = sehirleri_getir()
 except Exception as e:
-    st.error(f"Strapi'ye baglanılamadı: {e}")
-    st.info("Strapi'nin calistigından emin olun: http://localhost:1337")
+    st.error(f"Strapi'ye baglanÄ±lamadÄ±: {e}")
+    st.info("Strapi'nin calistigÄ±ndan emin olun: https://turkiye-gezi-rehberi.onrender.com")
     st.stop()
 
 if not sehirler:
@@ -113,7 +113,7 @@ for mekan in mekanlar:
                 st.image("https://picsum.photos/400/300", use_container_width=True)
         with bilgi_col:
             st.markdown(f"### {ad}")
-            st.markdown(f'<span class="puan-badge">⭐ {puan}/10</span>', unsafe_allow_html=True)
+            st.markdown(f'<span class="puan-badge">â­ {puan}/10</span>', unsafe_allow_html=True)
             st.markdown("")
             if dil == "Turkce":
                 blocks = alan_al(mekan, "aciklama") or []
@@ -132,4 +132,4 @@ for mekan in mekanlar:
         st.divider()
 
 st.markdown("---")
-st.markdown("<center><small>BIP210 Final Projesi • YZ Destekli Gezi Rehberi</small></center>", unsafe_allow_html=True)
+st.markdown("<center><small>BIP210 Final Projesi â€¢ YZ Destekli Gezi Rehberi</small></center>", unsafe_allow_html=True)
